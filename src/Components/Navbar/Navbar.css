@@ -2,20 +2,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 20px 170px;
+    margin: 20px 110px;
 }
 .nav-menu{
     display: flex;
     align-items: center;
     list-style: none;
     gap: 60px;
-    font-size: 20px;
+    font-size:13px;
 }
 .nav-connect{
-    padding: 20px 40px;
+    padding: 15px 35px;
     border-radius: 50px;
     background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.02%);
-    font-size: 22px;
+    font-size: 14px;
     cursor: pointer;
     transition: 0.5  ;
 
@@ -24,7 +24,7 @@
     transform: scale(1.05);
 }
 .logo{
-    width: 127px;
+    width: 107px;
 }
 .nav-menu li img{
     margin-left: -64px;
@@ -68,7 +68,7 @@
         display: block;
         position: relative;
         top: 30px;
-        left: 200px;
+        left: 120px;
         width: 30px;
     }
     .nav-menu{
@@ -78,7 +78,7 @@
         top: 0;
         gap: 30px;
         background-color: #1F0016;
-        width: 350px;
+        width: 200px;
         height: 100%;
         z-index: 2;
         transition: right 0.5s;
