@@ -1,325 +1,311 @@
-.mywork{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
-    margin: 80px 180px;
+.mywork {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(30px, 5vw, 60px);
+  margin: clamp(40px, 8vw, 80px) auto;
+  width: 100%;
+  max-width: 1400px;
+  box-sizing: border-box;
+  padding: 0 clamp(20px, 4vw, 60px);
 }
+
 .mywork-title {
-    position: relative;
-}
-.mywork-title h1{
-    padding: 0px 30px;
-    font-size: 80px;
-    font-weight: 600;
-}
-.mywork-title img{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-}
-.mywork-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
-}
-.mywork-container img{
-    box-sizing: border-box;
-    width: 490PX;
-    height: 280px;
-    transition: 0.3s;
-    cursor: pointer;
-}
-.mywork-container img:hover{
-    transform: scale(1.10);
-    border: 4px solid #ff00ff;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-.mywork-showmore{
-    display: flex;
-    gap: 15px;
-    border-radius: 50px;
-    border: 2px solid white;
-    padding: 30px 60px;
-    font-size: 22px;
-    font-weight: 500;
-    margin-bottom: 80px;
-    transition: 0.6s;
-    cursor: pointer;
-}
-.mywork-showmore:hover{
-    gap: 30px;
-    transition: 0.6s;
-}
-@media(max-width:768px){
-    .mywork{
-        gap: 50px;
-        margin: 50px 70px;
-        align-items: start;
-    }
-    .mywork-title h1{
-        padding: 0;
-        font-size: 50px;
-        font-weight: 600;
-    }
-    .mywork-title img{
-        width: 130px;
-        margin-right: -20px;
-    }
-    .mywork-container{
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-    .mywork-container img{
-        width: 100%;
-        height: 100%;
-    }
-    .mywork-showmore{
-        padding: 20px 40px;
-        font-size: 18px;
-        margin: 50px auto;
-        cursor: pointer;
-    }
-}
-
-
-/* Add these styles to your existing MyWork.css file */
-
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  backdrop-filter: blur(5px);
-}
-
-.popup-content {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
-  max-width: 450px;
-  width: 90%;
   text-align: center;
-  animation: popupSlide 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  overflow: hidden;
+  margin-bottom: clamp(10px, 2vw, 20px);
 }
 
-.popup-content::before {
-  content: '';
+.mywork-title h1 {
+  padding: 0 clamp(15px, 3vw, 30px);
+  font-size: clamp(28px, 6vw, 80px);
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
+  word-break: break-word;
+  hyphens: auto;
+  margin: 0;
+}
+
+.mywork-title img {
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: -10px;
   right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  z-index: -1;
+  width: clamp(60px, 20vw, 150px);
+  height: auto;
 }
 
-@keyframes popupSlide {
-  from {
-    transform: translateY(-50px) scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-}
-
-.popup-content h3 {
-  color: #ffffff;
-  margin-bottom: 25px;
-  font-size: 1.6rem;
-  font-weight: 600;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  letter-spacing: -0.5px;
-}
-
-.credentials {
-  margin: 25px 0;
-  text-align: left;
-}
-
-.credential-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 16px 0;
-  padding: 16px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.credential-item:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateX(2px);
-}
-
-.credential-item label {
-  font-weight: 600;
-  color: #e0e0e0;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.credential-item span {
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-  background: rgba(0, 0, 0, 0.4);
-  color: #00ff88;
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  user-select: all;
-  border: 1px solid rgba(0, 255, 136, 0.2);
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.credential-item span:hover {
-  background: rgba(0, 0, 0, 0.6);
-  border-color: rgba(0, 255, 136, 0.4);
-  color: #00ffaa;
-  transform: scale(1.02);
-}
-
-.popup-buttons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-.cancel-btn, .proceed-btn {
-  padding: 14px 28px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  position: relative;
-  overflow: hidden;
-}
-
-.cancel-btn {
-  background: rgba(255, 255, 255, 0.1);
-  color: #cccccc;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.cancel-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-}
-
-.proceed-btn {
-  background: linear-gradient(135deg, #0066ff 0%, #004dd9 100%);
-  color: white;
-  border: 1px solid rgba(0, 102, 255, 0.3);
-  box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
-}
-
-.proceed-btn:hover {
-  background: linear-gradient(135deg, #0052cc 0%, #003bb3 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 102, 255, 0.4);
-}
-
-.proceed-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
+/* Main Container - Optimized for 3 items */
+.mywork-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: clamp(35px, 5vw, 60px);
   width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s ease;
+  max-width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: start;
 }
 
-.proceed-btn:hover::before {
-  left: 100%;
+.mywork-container > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-@media (max-width: 480px) {
-  .popup-content {
-    padding: 30px 20px;
-    margin: 0 15px;
-    border-radius: 16px;
-  }
-  
-  .popup-content h3 {
-    font-size: 1.4rem;
-  }
-  
-  .credential-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-  
-  .credential-item span {
-    align-self: stretch;
-    text-align: center;
-  }
-  
-  .popup-buttons {
-    flex-direction: column;
-  }
-  
-  .cancel-btn, .proceed-btn {
-    width: 100%;
-    padding: 16px;
-  }
+.mywork-container img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
 }
 
+.mywork-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 35px rgba(255, 0, 255, 0.35);
+}
 
-credential-copy {
+.mywork-showmore {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  flex: 2;
-}
-
-.credential-copy span {
-  flex-grow: 1;
-  text-align: left;
-}
-
-.copy-btn {
-  background: #f0f0f0;
-  border: none;
-  padding: 0.3rem 0.8rem;
-  border-radius: 5px;
+  gap: clamp(10px, 2vw, 15px);
+  border-radius: 50px;
+  border: 2px solid white;
+  padding: clamp(14px, 2.5vw, 30px) clamp(28px, 5vw, 60px);
+  font-size: clamp(14px, 2.5vw, 22px);
+  font-weight: 500;
+  margin-top: clamp(20px, 4vw, 40px);
+  transition: gap 0.6s ease, transform 0.3s ease;
   cursor: pointer;
-  font-size: 0.9rem;
-  transition: background 0.3s ease;
+  white-space: nowrap;
 }
 
-.copy-btn:hover {
-  background: #e0e0e0;
+.mywork-showmore:hover {
+  gap: clamp(15px, 3vw, 25px);
+  transform: translateY(-2px);
 }
 
-.copy-btn:active {
-  background: #d0d0d0;
+/* Large Desktop - 3 columns */
+@media (min-width: 1201px) {
+  .mywork-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(40px, 4vw, 55px);
+  }
+}
+
+/* Medium Desktop - 2 columns */
+@media (max-width: 1200px) {
+  .mywork {
+    padding: 0 clamp(20px, 4vw, 50px);
+    gap: clamp(25px, 4.5vw, 50px);
+  }
+  
+  .mywork-container {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: clamp(30px, 4vw, 45px);
+  }
+}
+
+@media (max-width: 992px) {
+  .mywork {
+    padding: 0 clamp(20px, 3.5vw, 40px);
+    gap: clamp(25px, 4vw, 45px);
+    margin: clamp(30px, 6vw, 60px) auto;
+  }
+  
+  .mywork-title h1 {
+    font-size: clamp(24px, 5.5vw, 60px);
+  }
+  
+  .mywork-container {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: clamp(25px, 3.5vw, 40px);
+  }
+  
+  .mywork-container img:hover {
+    transform: scale(1.03);
+  }
+}
+
+/* Tablet Portrait - 2 columns */
+@media (max-width: 768px) {
+  .mywork {
+    padding: 0 clamp(15px, 3vw, 30px);
+    gap: clamp(20px, 3.5vw, 35px);
+    margin: clamp(25px, 5vw, 45px) auto;
+  }
+  
+  .mywork-title h1 {
+    font-size: clamp(22px, 5vw, 48px);
+  }
+  
+  .mywork-title img {
+    width: clamp(50px, 18vw, 100px);
+  }
+  
+  .mywork-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(20px, 3vw, 35px);
+  }
+  
+  .mywork-container img {
+    border-radius: 10px;
+  }
+}
+
+/* Mobile Landscape */
+@media (max-width: 640px) {
+  .mywork {
+    padding: 0 clamp(12px, 2.5vw, 25px);
+    gap: clamp(18px, 3vw, 28px);
+    margin: clamp(20px, 4vw, 35px) auto;
+  }
+  
+  .mywork-title h1 {
+    font-size: clamp(20px, 4.5vw, 38px);
+  }
+  
+  .mywork-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(15px, 2.5vw, 25px);
+  }
+}
+
+/* Mobile Portrait - Single column */
+@media (max-width: 480px) {
+  .mywork {
+    padding: 0 clamp(12px, 2vw, 20px);
+    gap: clamp(15px, 2.5vw, 22px);
+    margin: clamp(18px, 3.5vw, 30px) auto;
+  }
+  
+  .mywork-title h1 {
+    font-size: clamp(18px, 4vw, 32px);
+  }
+  
+  .mywork-title img {
+    width: clamp(40px, 14vw, 75px);
+  }
+  
+  .mywork-container {
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 3vw, 30px);
+  }
+  
+  .mywork-container img {
+    border-radius: 8px;
+    max-width: 100%;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 360px) {
+  .mywork {
+    padding: 0 clamp(10px, 2vw, 15px);
+    gap: clamp(12px, 2vw, 18px);
+    margin: clamp(15px, 3vw, 25px) auto;
+  }
+  
+  .mywork-title h1 {
+    font-size: clamp(16px, 3.5vw, 28px);
+    padding: 0 clamp(10px, 2vw, 15px);
+  }
+  
+  .mywork-title img {
+    width: clamp(35px, 12vw, 60px);
+    bottom: -5px;
+  }
+  
+  .mywork-container {
+    gap: clamp(18px, 2.5vw, 25px);
+  }
+  
+  .mywork-container img {
+    border-radius: 8px;
+  }
+}
+
+/* Ultra-wide Displays - 3 columns max */
+@media (min-width: 1600px) {
+  .mywork {
+    max-width: 1600px;
+  }
+  
+  .mywork-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(50px, 3vw, 70px);
+    max-width: 100%;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .mywork-container img:hover {
+    transform: none;
+  }
+  
+  .mywork-container img:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+}
+
+/* High DPI Display Optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .mywork-container img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (orientation: landscape) and (max-height: 600px) {
+  .mywork {
+    gap: clamp(12px, 2.5vh, 25px);
+    margin: clamp(12px, 2.5vh, 25px) auto;
+  }
+  
+  .mywork-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(15px, 2vh, 25px);
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .mywork-container img,
+  .mywork-showmore {
+    transition: none;
+  }
+}
+
+/* Focus styles for accessibility */
+.mywork-container img:focus,
+.mywork-showmore:focus {
+  outline: 2px solid #0066ff;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .mywork-container img {
+    break-inside: avoid;
+  }
+  
+  .mywork-showmore {
+    display: none;
+  }
 }

@@ -2,33 +2,15 @@ import React from 'react'
 import './About.css'
 import theme_pattern from '../../assets/theme_pattern.svg'
 import prof from '../../assets/prof.svg'
-import {motion} from "framer-motion"
-
-const variants = {
-    initial: {
-        x: -500,
-        y: 100,
-        opacity: 0,
-    },
-    animate: {
-        x: 0,
-        opacity: 1,
-        y:0,
-        transition: {
-            duration: 1.5,
-            staggerChildren: 0.1
-        },
-    }
-}
 
 const About = () => {
   return (
-    <motion.div id='about' className='about' variants={ variants} initial="initial" whileInView="animate">
-        <motion.div className="about-title" variants={ variants}>
+    <div id='about' className='about'>
+        <div className="about-title">
             <h1>About me</h1>
             <img src={theme_pattern} alt="" />
-        </motion.div>
-        <motion.div className="about-sections" variants={ variants}>
+        </div>
+        <div className="about-sections">
             <div className="about-left">
                 <img src={prof} alt="" />
             </div>
@@ -44,8 +26,8 @@ const About = () => {
                     <div className="about-skill"><p>Ui/Ux</p><hr style={{width:"65%"}} /></div>
                 </div>
             </div>
-        </motion.div>
-        <motion.div className="about-achievements" variants={ variants}>
+        </div>
+        <div className="about-achievements">
             <div className="about-achievement">
                 <h1>3+</h1>
                 <p>YEARS OF EXPERIENCE</p>
@@ -56,13 +38,13 @@ const About = () => {
                 <p>PROJECS COMPLETED</p>
             </div>
             <hr />
-            <div className="about-achievment">
+            <div className="about-achievement">
                 <h1></h1>
                 <p></p>
             </div>
-        </motion.div>
-    </motion.div>
+        </div>
+    </div>
   )
 }
 
-export default  About
+export default About
